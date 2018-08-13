@@ -1,3 +1,36 @@
+
+
 .list-group-item {
   line-height: 2.5;
+}
+#content {
+  display: block;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.navigation {
+  background-color: grey;
+}
+
+.container {
+  position: inherit;
+}
+
+
+.navigation-title {
+  width: 50%;
+  display: inline-block;
+  padding: .5rem;
+  color: #EEBF47;
+  text-decoration: none;
+  font-family: 'Do Hyeon', sans-serif;
+} 
+
+#headingPos {
+  vertical-align: -25%;
+}
+
+section {
+  display: block;
 }
