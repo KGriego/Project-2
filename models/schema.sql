@@ -1,5 +1,11 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
+USE  dc1qxydzth9308tu;
 
-DROP DATABASE IF EXISTS testdb;
-CREATE DATABASE testdb;
+CREATE TABLE cars (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY_KEY,
+    model VARCHAR(50) NOT NULL,
+    transmission VARCHAR(50) NOT NULL,
+    trunkSpace INTEGER(1) NOT NULl,
+    people INTEGER(1) NOT NULL,
+    imgSRC VARCHAR(200) NOT NULL,
+    company VARCHAR(100)NOT NULL
+);
