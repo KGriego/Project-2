@@ -109,5 +109,3 @@ for (var i = 0; i< hertzArray.length; i++) {
   });
 }
 
-
-
