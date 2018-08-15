@@ -13,6 +13,10 @@ nav {
   max-width: 100%;
 }
 
+.noMargin {
+  margin: 0;
+}
+
 .logo-text {
   display: inline-block;
   color: #eebf47;
@@ -54,6 +58,7 @@ input {
   background-image: url("../images/snow_mountains_forest_landscape_road-21144.jpg");
   background-position: center;
   margin-top: 10px;
+  height: 50%;
 }
 
 .input-field>label {
@@ -82,8 +87,17 @@ label.active {
 }
 
 .card-image {
-  height: 100%;
-  width: 75%;
+  height: auto;
+  width: 100%;
+}
+
+.locations {
+  height: auto;
+  width: 45%
+}
+
+#results {
+  display: none;
 }
 
 .page-footer {

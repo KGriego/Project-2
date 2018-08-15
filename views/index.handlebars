@@ -20,7 +20,7 @@
               <label for="dropoffLocation">Drop Off Location</label>
             </div>
           </div>
-          <div class="row">
+          <div class="row noMargin">
             <div class="input-field col s3">
               <input id="pickupDate" placeholder="Pick Up Date" name="pickupDate" />
             </div>
@@ -37,9 +37,30 @@
         </form>
       </div>
       <div class="row">
-        <a class="btn waves-effect waves-light" type="submit" href="/findCar">
+        <a id="findCars" class="btn waves-effect waves-light" type="submit" href="#findCar">
           Lets find you a car!
           <i class="material-icons right">send</i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="showresults">
+        <h1 id="results">
+          these are the results
+        </h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col l4">
+        <a href="/locations">
+          <h4>Locations</h4>
+          <img class="locations" src="images/las-vegas.jpg" alt="">
         </a>
       </div>
     </div>

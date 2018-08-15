@@ -4,6 +4,14 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
+var $dropOffLocation = $("#dropoffLocation");
+
+var userTimeDetails = []
+var startDate;
+var endDate;
+var pickUpTime;
+var dropOffTime;
+
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -106,20 +114,67 @@ $(document).ready(function() {
 
   var currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 1);
-
+  
   $("#pickupDate").datepicker({
     minDate: currentDate,
-    onSelect: function(dateText, inst){
+    onSelect: function(startDate, inst){
       $("#dropoffDate").datepicker("option","minDate",
       $("#pickupDate").datepicker("getDate"));
+      console.log("Start Date MM/DD/YYYY: " + startDate)
+      userTimeDetails.push(startDate);
+      return startDate;
+    }
+  })
+
+  $("#dropoffDate").datepicker({
+    minDate: $("#pickupDate").datepicker("getDate"),
+    onSelect: function(endDate, inst){
+      console.log("End Date MM/DD/YYYY: " + endDate);
+      userTimeDetails.push(endDate);
+      return endDate;
+    }
+  });
+  
+  $("#pickupTime").timepicker({
+    onSelect: function(pickUpTime, inst) {
+      console.log("Pick Up Time: " + pickUpTime);
+      userTimeDetails.push(pickUpTime);
+      return pickUpTime;
     }
   });
 
-  $("#dropoffDate").datepicker({
-    minDate: $("#pickupDate").datepicker("getDate")
+  $("#dropoffTime").timepicker({
+    onSelect: function(dropOffTime, inst) {
+      console.log("Drop Off Time: " + dropOffTime);
+      userTimeDetails.push(dropOffTime);
+      console.log(userTimeDetails[0]);
+      console.log(userTimeDetails[1]);
+      console.log(userTimeDetails[2]);
+      console.log(userTimeDetails[3]);
+      return dropOffTime;
+    }
   });
-  
-  $("#pickupTime").timepicker();
 
-  $("#dropoffTime").timepicker();
+  $("#findCars").on("click", function() {
+    $("#results").show();
+    var userPickUpLocation = $("#pickupLocation").val();
+    if (!$dropOffLocation.val()) {
+      var userDropOffLocation = userPickUpLocation;
+    } else {
+      var userDropOffLocation = $dropOffLocation.val()
+    }
+
+    $("#results").append("<hr>");
+    $("#results").append(userPickUpLocation);
+    $("#results").append("<hr>");
+    $("#results").append(userDropOffLocation);
+    $("#results").append("<hr>");
+    $("#results").append(userTimeDetails[0]);
+    $("#results").append("<hr>");
+    $("#results").append(userTimeDetails[1]);
+    $("#results").append("<hr>");
+    $("#results").append(userTimeDetails[2]);
+    $("#results").append("<hr>");
+    $("#results").append(userTimeDetails[3]);
+  })
 });
