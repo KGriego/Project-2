@@ -13,17 +13,12 @@ nav {
   max-width: 100%;
 }
 
-
-.noMargin {
-  margin: 0;
-}
-
 .logo-text {
   display: inline-block;
   color: #eebf47;
   text-decoration: none;
   font-family: "Do Hyeon", sans-serif;
-  vertical-align: 40%;
+  vertical-align: 30%;
 }
 
 #dropdown1 {
@@ -52,7 +47,6 @@ nav {
 }
 
 input {
-  color: white;
   border-bottom: 1px solid #9e9e9e !important;
 }
 
@@ -60,7 +54,6 @@ input {
   background-image: url("../images/snow_mountains_forest_landscape_road-21144.jpg");
   background-position: center;
   margin-top: 10px;
-  height: 50%;
 }
 
 .input-field>label {
@@ -89,17 +82,8 @@ label.active {
 }
 
 .card-image {
-  height: auto;
-  width: 100%;
-}
-
-.locations {
-  height: auto;
-  width: 45%
-}
-
-#results {
-  display: none;
+  height: 100%;
+  width: 75%;
 }
 
 .page-footer {
