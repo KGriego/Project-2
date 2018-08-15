@@ -5,46 +5,44 @@
   </div>
 </div>
 --}}
-<div class="dateAndLocation">
-  <div class="container">
-    <div class="row">
-      <form class="col s12" name="dateHourDetails">
-        <div class="row">
-          <div class="input-field col s6">
-            <input id="pickupLocation" type="text">
-            <label for="pickupLocation">Pick Up Location</label>
+<main>
+  <div class="dateAndLocation">
+    <div class="container">
+      <div class="row">
+        <form class="col s12" name="dateHourDetails">
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="pickupLocation" type="text">
+              <label for="pickupLocation">Pick Up Location</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="dropoffLocation" type="text">
+              <label for="dropoffLocation">Drop Off Location</label>
+            </div>
           </div>
-          <div class="input-field col s6">
-            <input id="dropoffLocation" type="text">
-            <label for="dropoffLocation">Drop Off Location</label>
+          <div class="row">
+            <div class="input-field col s3">
+              <input id="pickupDate" placeholder="Pick Up Date" name="pickupDate" />
+            </div>
+            <div class="input-field col s3">
+              <input id="pickupTime" type="text" placeholder="Pick Up Time">
+            </div>
+            <div class="input-field col s3">
+              <input id="dropoffDate" type="text" placeholder="Drop Off Date">
+            </div>
+            <div class="input-field col s3">
+              <input id="dropoffTime" type="text" placeholder="Drop Off Time">
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s3">
-            <input id="pickupDate" placeholder="Pick Up Date" />
-          </div>
-          <div class="input-field col s3">
-            <input id="pickupTime" type="text">
-            <label for="pickupTime">Pick Up Time</label>
-          </div>
-          <div class="input-field col s3">
-            <input id="dropoffDate" type="text">
-            <label for="dropoffDate">Drop Off Date</label>
-          </div>
-          <div class="input-field col s3">
-            <input id="dropoffTime" type="text">
-            <label for="dropoffTime">Drop Off Time</label>
-          </div>
-        </div>
-      </form>
-    </div>
-    <div class="row">
-      <button class="btn waves-effect waves-light" type="submit" name="d">
-        Lets find you a car!
-        <i class="material-icons right">send</i>
-      </button>
+        </form>
+      </div>
+      <div class="row">
+        <a class="btn waves-effect waves-light" type="submit" href="/findCar">
+          Lets find you a car!
+          <i class="material-icons right">send</i>
+        </a>
+      </div>
     </div>
   </div>
-</div>
-
-<script src="/js/index.js"></script>
+</main>
+{{> footer-block}} {{!-- Jquiery UI --}}
