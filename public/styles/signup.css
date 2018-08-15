@@ -1,0 +1,98 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav {
+  background: grey;
+  max-width: 100%;
+}
+
+
+.noMargin {
+  margin: 0;
+}
+
+.logo-text {
+  display: inline-block;
+  color: #eebf47;
+  text-decoration: none;
+  font-family: "Do Hyeon", sans-serif;
+  vertical-align: 40%;
+}
+
+#dropdown1 {
+  background: grey;
+  width: 500px !important;
+  top: 99% !important;
+}
+
+.loginTitle {
+  position: absolute;
+  top: 0;
+  left: 15%;
+}
+
+.sidenav {
+  background: grey;
+}
+
+.sidenav-trigger {
+  position: absolute;
+  top: 1.5%;
+}
+
+.sidenav-trigger .material-icons {
+  font-size: 36px;
+}
+
+input {
+  border-bottom: 1px solid #9e9e9e !important;
+}
+
+.dateAndLocation {
+  background-image: url("../images/snow_mountains_forest_landscape_road-21144.jpg");
+  background-position: center;
+  margin-top: 10px;
+  height: 50%;
+}
+
+.findCar {
+  text-align: center;
+}
+
+.carHolder {
+  border: 10px solid darkblue;
+}
+
+.carDetails {
+  border: 5px solid green;
+}
+
+.carImage {
+  height: auto;
+  width: 100%;
+}
+
+.card-image {
+  height: auto;
+  width: 100%;
+}
+
+.locations {
+  height: auto;
+  width: 45%
+}
+
+#results {
+  display: none;
+}
+
+.page-footer {
+  background: grey;
+}
