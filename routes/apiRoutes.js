@@ -21,4 +21,11 @@ module.exports = function(app) {
       res.json(dbExample);
     });
   });
+  app.post(
+    "/login",
+    passport.authenticate("local", {
+      successRedirect: "/",
+      failureRedirect: "/login"
+    })
+  );
 };
