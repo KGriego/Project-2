@@ -1,14 +1,14 @@
 // config/mongo.json
 {
     "development": {
-     "database": "<your_db_name_here>",
+     "database": "dc1qxydzth9308tu",
      "host": "localhost"
     },
     "test": {
-     "database": "<your_db_name_here>",
+     "database": "dc1qxydzth9308tu",
      "host": "localhost"
     },
     "production": {
-     "use_env_variable": "MONGODB_URI"
+     "use_env_variable": "mongodb://heroku_sv4h811h:password888@ds141631.mlab.com:41631/heroku_sv4h811h"
     }
    }
