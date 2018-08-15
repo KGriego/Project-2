@@ -99,14 +99,27 @@ $submitBtn.on("click", handleFormSubmit);
 $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 $(document).ready(function() {
-  var date = new Date();
-  date.setDate(date.getDate() + 1);
-  
   $(".dropdown-trigger").dropdown({
     closeOnClick: false
   });
+  $('.sidenav').sidenav();
+
+  var currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 1);
 
   $("#pickupDate").datepicker({
-    minDate: date
+    minDate: currentDate,
+    onSelect: function(dateText, inst){
+      $("#dropoffDate").datepicker("option","minDate",
+      $("#pickupDate").datepicker("getDate"));
+    }
   });
+
+  $("#dropoffDate").datepicker({
+    minDate: $("#pickupDate").datepicker("getDate")
+  });
+  
+  $("#pickupTime").timepicker();
+
+  $("#dropoffTime").timepicker();
 });
