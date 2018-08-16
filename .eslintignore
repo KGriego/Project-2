@@ -1,3 +1,5 @@
 models/index.js
 node_modules
 public/
+public/js/index.js
+models/cars

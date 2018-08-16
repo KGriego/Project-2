@@ -93,3 +93,52 @@ label.active {
 /* .showresults{
   display: none;
 } */
+
+.payFont {
+  color: maroon !important;
+  font-weight: bold;
+}
+
+#paymentCountry {
+  float: left;
+  margin-top: 30px;
+  margin-left: 10px;
+  font-style: italic;
+  color: maroon;
+  font-weight: bold;
+}
+#paymentDescr, #paymentCard, #paymentExpire {
+  float: left;
+  font-style: italic;
+  color: black;
+}
+#paymentExpire {
+  margin-top: -23px;
+  margin-left: 11px;
+  margin-right: 10px;
+}
+
+.payWrapper {
+  background-color: #eebf47;
+  opacity: .8;
+  border-radius: 25px;
+}
+.validate {
+  color: black;
+}
+
+#country {
+  margin-top: 20px;
+  display: block;
+  width: 40%;
+  background-color: grey;
+  border: #eebf47;
+}
+
+#zipPosition {
+  margin-left: 100px;
+}
+
+#buttonColor {
+  background-color: maroon !important;
+}

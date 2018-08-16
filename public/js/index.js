@@ -1,3 +1,4 @@
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -12,8 +13,8 @@ var lat;
 var lng;
 
 $(document).ready(function() {
-  $("#pickupLocation").change(function() {
-    zip = $("#pickupLocation").val();
+  $(".pickupLocation").change(function() {
+    zip = $(".pickupLocation").val();
     console.log(zip);
     var address = parseInt(zip);
     $.ajax({
@@ -117,6 +118,8 @@ $(document).ready(function() {
             var transmission = carsResponse[i].vehicle_info.transmission;
             var doors = carsLength[i].vehicle_info.type;
 
+            $(".card-title").text("")
+            
             $showResults.append(
               newCol,
               newCard,
