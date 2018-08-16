@@ -5,8 +5,8 @@ $(document).ready(function() {
   var passwordInput = $("input#password");
 
   // When the form is submitted, we validate there's an email and password entered
-  $("#submit").on("click", function(event) {
-    event.preventDefault();
+  loginForm.on("submit", function(event) {
+    // event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
@@ -32,8 +32,8 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function(data) {
-      // window.location.replace(data);
-      location.href("/index")
+      window.location.replace(data);
+      // location.href("/index")
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);
