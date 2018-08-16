@@ -96,3 +96,17 @@ input {
 .page-footer {
   background: grey;
 }
+
+.signuprow {
+  margin-top: 20px;
+}
+
+.signupcol {
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.signupImage {
+  width: 45%;
+  height: auto;
+}
