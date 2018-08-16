@@ -4,14 +4,6 @@ var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
-var $dropOffLocation = $("#dropoffLocation");
-
-var userTimeDetails = []
-var startDate;
-var endDate;
-var pickUpTime;
-var dropOffTime;
-
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
@@ -114,18 +106,15 @@ $(document).ready(function() {
 
   var currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 1);
-  
+
   $("#pickupDate").datepicker({
     dateFormat: "yyyy-mm-dd",
     minDate: currentDate,
-    onSelect: function(startDate, inst){
+    onSelect: function(dateText, inst){
       $("#dropoffDate").datepicker("option","minDate",
       $("#pickupDate").datepicker("getDate"));
-      console.log("Start Date MM/DD/YYYY: " + startDate)
-      userTimeDetails.push(startDate);
-      return startDate;
     }
-  })
+  });
 
   $("#dropoffDate").datepicker({
     dateFormat: "yyyy-mm-dd",
