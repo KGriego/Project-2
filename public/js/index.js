@@ -171,6 +171,7 @@ $(document).ready(function() {
     $("#results").append(userTimeDetails[3]);
   })
 
+  
   var url = "https://api.sandbox.amadeus.com/v1.2/cars/search-circle?apikey=fMUHkOJ5X8vyjqCHnzz4D94FG8rfPMxc&latitude=35.1504&longitude=-114.57632&radius=42&pick_up=" + userTimeDetails[0] + "&drop_off=" + userTimeDetails[1];
 
   $.ajax({
