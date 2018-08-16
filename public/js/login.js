@@ -20,6 +20,7 @@ $(document).ready(function() {
     loginUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
+    console.log(event);
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
@@ -28,7 +29,7 @@ $(document).ready(function() {
       email: email,
       password: password
     }).then(function(data) {
-      window.location.replace(data);
+      // window.location.replace(data);
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);

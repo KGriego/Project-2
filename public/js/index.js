@@ -3,106 +3,34 @@ var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
-
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
-  });
-};
-
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
-  });
-};
-
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+var startDate1;
+var endDate1;
+var pickUpTime1;
+var dropOffTime1;
+var zip;
+var lat;
+var lng;
 
 $(document).ready(function() {
+  $("#pickupLocation").change(function() {
+    zip = $("#pickupLocation").val();
+    console.log(zip);
+    var address = parseInt(zip);
+    $.ajax({
+      url: "https://maps.googleapis.com/maps/api/geocode/json?address=" + address,
+      method: "GET"
+    }).then(function(response){
+      console.log(response);
+      lat = response.results[0].geometry.location.lat;
+      lng = response.results[0].geometry.location.lng;
+      console.log(lat, lng);
+    })
+  });
+
   $(".dropdown-trigger").dropdown({
     closeOnClick: false
   });
-  $('.sidenav').sidenav();
+  $(".sidenav").sidenav();
 
   var currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 1);
@@ -110,60 +38,88 @@ $(document).ready(function() {
   $("#pickupDate").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: currentDate,
-    onSelect: function(dateText, inst){
-      $("#dropoffDate").datepicker("option","minDate",
-      $("#pickupDate").datepicker("getDate"));
+    onSelect: function(dateText, inst) {
+      $("#dropoffDate").datepicker(
+        "option",
+        "minDate",
+        $("#pickupDate").datepicker("getDate")
+      );
+      startDate1 = dateText;
+      console.log("Pick up date: ", startDate1);
     }
   });
 
   $("#dropoffDate").datepicker({
     dateFormat: "yy-mm-dd",
     minDate: $("#pickupDate").datepicker("getDate"),
-    onSelect: function(endDate, inst){
+    onSelect: function(endDate, inst) {
       console.log("End Date MM/DD/YYYY: " + endDate);
-      userTimeDetails.push(endDate);
+      endDate1 = endDate;
       return endDate;
     }
   });
-  
+
   $("#pickupTime").timepicker({
+    ampm: true,
+    format: "g:i A",
     onSelect: function(pickUpTime, inst) {
-      console.log("Pick Up Time: " + pickUpTime);
-      userTimeDetails.push(pickUpTime);
-      return pickUpTime;
+      if (inst < 10) {
+        pickUpTime1 = pickUpTime + ":0" + inst;
+      } else {
+        pickUpTime1 = pickUpTime + ":" + inst;
+      }
+      //console.log(pickUpTime1);
+      console.log("Drop Off Time: " + pickUpTime1, inst);
+      return pickUpTime1;
     }
   });
 
   $("#dropoffTime").timepicker({
-    onSelect: function(dropOffTime, inst) {
-      console.log("Drop Off Time: " + dropOffTime);
+    ampm: true,
+    format: "g:i A",
+    onSelect: function(dropOffTime, inst, a) {
+      console.log("Drop Off Time: " + dropOffTime, inst);
+      if (inst < 10) {
+        dropOffTime1 = dropOffTime + ":0" + inst;
+      } else {
+        dropOffTime1 = dropOffTime + ":" + inst;
+      }
+      console.log(dropOffTime1);
+      return dropOffTime1;
     }
   });
 
-  $("#findCars").on("click", function() {
-    $("#results").show();
-    var userPickUpLocation = $("#pickupLocation").val();
-    if (!$dropOffLocation.val()) {
-      var userDropOffLocation = userPickUpLocation;
-    } else {
-      var userDropOffLocation = $dropOffLocation.val()
-    }
+    $("#findCars").on("click", function() {
+        var url = "https://api.sandbox.amadeus.com/v1.2/cars/search-circle?apikey=fMUHkOJ5X8vyjqCHnzz4D94FG8rfPMxc&latitude=" + lat + "&longitude=" + lng + "&radius=42&pick_up=" + startDate1 + "&drop_off=" + endDate1;
 
-    $("#results").append("<hr>");
-    $("#results").append(userPickUpLocation);
-    $("#results").append("<hr>");
-    $("#results").append(userDropOffLocation);
-    $("#results").append("<hr>");
-    $("#results").append(userTimeDetails[0]);
-    $("#results").append("<hr>");
-    $("#results").append(userTimeDetails[1]);
-    $("#results").append("<hr>");
-    $("#results").append(userTimeDetails[2]);
-    $("#results").append("<hr>");
-    $("#results").append(userTimeDetails[3]);
-  })
+        $.ajax({
+          url: url,
+          method: "GET"
+        }).then(function(response){
+          console.log(response.results[0].cars[0].vehicle_info.acriss_code);
 
-  $("#findCars").on("click", function() {
-    console.log(endDate);
-  })
-});
+          var carsResponse = response.results[0].cars
+          var carsLength = response.results[0].cars.length;
+        
+          console.log("Cars Info", carsResponse);
+          
+          var $showResults = $(".showresults");
+          var newCol = $("<div class=\" col s12 m6>\"");
+          var newCard = $("<div class=\"card sticky-action large blue-grey darken-1\">")
+          var newcardImage = $("<div class=\"card-image\">")
+
+          for (var i = 0; i < carsLength; i++) {
+            var dailyTotal =  carsResponse[i].estimated_total.amount;
+            var airconditioning = carsResponse[i].vehicle_info.air_conditioning;
+            var category = carsResponse[i].vehicle_info.category;
+            var fuel = carsResponse[i].vehicle_info.fuel;
+            var transmission = carsResponse[i].vehicle_info.transmission;
+            var doors = carsLength[i].vehicle_info.type;
+
+            $showResults.append()
+          }
+
+          // $(".showresults").show();
+        });
+    });
+  });
