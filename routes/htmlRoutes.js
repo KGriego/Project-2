@@ -18,7 +18,7 @@ module.exports = function(app) {
   })
 
   app.get("/home", isAuthenticated, function(req, res) {
-    res.render("index", {layout: "index"});
+    res.render("index", {view: "index"});
   });
 
   app.get("/index", function(req, res) {
@@ -26,7 +26,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
-    res.render("404");
-  });
+  // app.get("*", function(req, res) {
+  //   res.render("404");
+  // });
 };

@@ -106,7 +106,8 @@ $(document).ready(function() {
           var $showResults = $(".showresults");
           var newCol = $("<div class=\" col s12 m6>\"");
           var newCard = $("<div class=\"card sticky-action large blue-grey darken-1\">")
-          var newcardImage = $("<div class=\"card-image\">")
+          var newcardImageDiv = $("<div class=\"card-image\">")
+          var cardImage = $("<img")
 
           for (var i = 0; i < carsLength; i++) {
             var dailyTotal =  carsResponse[i].estimated_total.amount;
@@ -116,7 +117,12 @@ $(document).ready(function() {
             var transmission = carsResponse[i].vehicle_info.transmission;
             var doors = carsLength[i].vehicle_info.type;
 
-            $showResults.append()
+            $showResults.append(
+              newCol,
+              newCard,
+              newcardImageDiv,
+              
+            )
           }
 
           // $(".showresults").show();

@@ -5,14 +5,17 @@ $(document).ready(function() {
   var passwordInput = $("input#password");
 
   // When the form is submitted, we validate there's an email and password entered
-  loginForm.on("submit", function(event) {
+  $("#submit").on("click", function(event) {
     event.preventDefault();
     var userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim()
     };
 
+    console.log("I'm being submitted")
+
     if (!userData.email || !userData.password) {
+      console.log("One of me doesn't exist")
       return;
     }
 
@@ -20,7 +23,7 @@ $(document).ready(function() {
     loginUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
-    console.log(event);
+    
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
@@ -30,6 +33,7 @@ $(document).ready(function() {
       password: password
     }).then(function(data) {
       // window.location.replace(data);
+      location.href("/index")
       // If there's an error, log the error
     }).catch(function(err) {
       console.log(err);
