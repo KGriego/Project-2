@@ -8,29 +8,23 @@
         </h3>
         <img class="signupImage" src="images/RoadRunner.png" alt="">
         <div class="row">
-          <form class="col s12">
+          <form name="signUp" class="col s12 createUser signUp">
             <div class="row">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input id="email" type="email" class="validate" placeholder="youremail@someservice.com">
+                </div>
+              </div>
               <div class="input-field col s12">
-                <input id="userName" type="text" class="validate" placeholder="Username">
+                <input id="password" type="password" class="validate" placeholder="Password">
               </div>
             </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="password" type="text" class="validate" placeholder="Password">
-              </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input id="email" type="email" class="validate" placeholder="youremail@someservice.com">
-              </div>
-            </div>
+            <input type="submit" id="submit" name="signUp">
           </form>
-          <button>
-            Create Account!
-          </button>
         </div>
       </div>
     </div>
   </div>
 </main>
+
 {{> footer-block}}
