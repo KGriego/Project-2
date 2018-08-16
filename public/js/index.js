@@ -1,3 +1,4 @@
+
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
@@ -10,6 +11,7 @@ var dropOffTime1;
 var zip;
 var lat;
 var lng;
+
 
 $(document).ready(function() {
   $(".pickupLocation").change(function() {
@@ -98,6 +100,9 @@ $(document).ready(function() {
         }).then(function(response){
           console.log(response.results[0].cars[0].vehicle_info.acriss_code);
 
+          
+
+
           var carsResponse = response.results[0].cars
           var carsLength = response.results[0].cars.length;
         
@@ -117,6 +122,7 @@ $(document).ready(function() {
             var transmission = carsResponse[i].vehicle_info.transmission;
             var doors = carsLength[i].vehicle_info.type;
 
+            $(".card-title").text("")
             $showResults.append(
               newCol,
               newCard,
