@@ -90,6 +90,10 @@ label.active {
   background: grey;
 }
 
+/* .showresults{
+  display: none;
+} */
+
 .payFont {
   color: maroon !important;
   font-weight: bold;
