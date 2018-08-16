@@ -108,7 +108,7 @@ $(document).ready(function() {
   currentDate.setDate(currentDate.getDate() + 1);
 
   $("#pickupDate").datepicker({
-    dateFormat: "yyyy-mm-dd",
+    dateFormat: "yy-mm-dd",
     minDate: currentDate,
     onSelect: function(dateText, inst){
       $("#dropoffDate").datepicker("option","minDate",
@@ -117,7 +117,7 @@ $(document).ready(function() {
   });
 
   $("#dropoffDate").datepicker({
-    dateFormat: "yyyy-mm-dd",
+    dateFormat: "yy-mm-dd",
     minDate: $("#pickupDate").datepicker("getDate"),
     onSelect: function(endDate, inst){
       console.log("End Date MM/DD/YYYY: " + endDate);
@@ -137,16 +137,8 @@ $(document).ready(function() {
   $("#dropoffTime").timepicker({
     onSelect: function(dropOffTime, inst) {
       console.log("Drop Off Time: " + dropOffTime);
-      userTimeDetails.push(dropOffTime);
-      console.log(userTimeDetails[0]);
-      console.log(userTimeDetails[1]);
-      console.log(userTimeDetails[2]);
-      console.log(userTimeDetails[3]);
-      dropOffTime =  dropOffTime;
     }
   });
-
-  console.log(dropOffTime)
 
   $("#findCars").on("click", function() {
     $("#results").show();
@@ -171,9 +163,7 @@ $(document).ready(function() {
     $("#results").append(userTimeDetails[3]);
   })
 
-  var url = "https://api.sandbox.amadeus.com/v1.2/cars/search-circle?apikey=fMUHkOJ5X8vyjqCHnzz4D94FG8rfPMxc&latitude=35.1504&longitude=-114.57632&radius=42&pick_up=" + userTimeDetails[0] + "&drop_off=" + userTimeDetails[1];
-
-  $.ajax({
-    url: url
+  $("#findCars").on("click", function() {
+    console.log(endDate);
   })
 });
