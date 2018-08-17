@@ -1,75 +1,75 @@
 {{> nav-block}} {{!--
 <div id="Rent-A-Car">
-  <div id="content">
-    <h1>{{> msg-block}}</h1>
-  </div>
+ <div id="content">
+  <h1>{{> msg-block}}</h1>
+ </div>
 </div>
 --}}
 <main>
-  <div class="dateAndLocation">
-    <div class="container">
-      <div class="row">
-        <form class="col s12" name="dateHourDetails">
-          <div class="row">
-            <div class="input-field col s6">
-              <input class="pickupLocation" id="entireAddress" type="text">
-              <label for="pickupLocation">Pick Up Location</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="dropoffLocation" type="text">
-              <label for="dropoffLocation">Drop Off Location</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s3">
-              <input id="pickupDate" placeholder="Pick Up Date" name="pickupDate" />
-            </div>
-            <div class="input-field col s3">
-              <input id="pickupTime" type="text" placeholder="Pick Up Time">
-            </div>
-            <div class="input-field col s3">
-              <input id="dropoffDate" type="text" placeholder="Drop Off Date">
-            </div>
-            <div class="input-field col s3">
-              <input id="dropoffTime" type="text" placeholder="Drop Off Time">
-            </div>
-          </div>
-        </form>
+ <div class="dateAndLocation">
+  <div class="container">
+   <div class="row">
+    <form class="col s12" name="dateHourDetails">
+     <div class="row">
+      <div class="input-field col s6">
+       <input class="pickupLocation" id="entireAddress" type="text">
+       <label for="pickupLocation">Pick Up Location</label>
       </div>
-      <div class="row">
-        <a id="findCars" class="btn waves-effect waves-light" type="submit">
-          Lets find you a car!
-          <i class="material-icons right">send</i>
-        </a>
+      <div class="input-field col s6">
+       <input id="dropoffLocation" type="text">
+       <label for="dropoffLocation">Drop Off Location</label>
       </div>
-    </div>
+     </div>
+     <div class="row">
+      <div class="input-field col s3">
+       <input id="pickupDate" placeholder="Pick Up Date" name="pickupDate" />
+      </div>
+      <div class="input-field col s3">
+       <input id="pickupTime" type="text" placeholder="Pick Up Time">
+      </div>
+      <div class="input-field col s3">
+       <input id="dropoffDate" type="text" placeholder="Drop Off Date">
+      </div>
+      <div class="input-field col s3">
+       <input id="dropoffTime" type="text" placeholder="Drop Off Time">
+      </div>
+     </div>
+    </form>
+   </div>
+   <div class="row">
+    <a id="findCars" class="btn waves-effect waves-light" type="submit">
+     Lets find you a car!
+     <i class="material-icons right">send</i>
+    </a>
+   </div>
   </div>
+ </div>
  <div class="container">
-      <div class="container" id = "resultsContainer">
-            {{!-- <div class="card sticky-action large blue-grey darken-1" id="card">
-              <div class="card-image">
-                <img class="carImage" src="images/RoadRunner.png">
-              </div>
-                <div class="card-title">Car Name</div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Card Title
-                  <i class="material-icons right">more_vert</i>
-                </span>
-                <p>
-                  <a href="#">This is a link</a>
-                </p>
-              </div>
-              <div class="card-action">
-                <span id="price">Price: $</span>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title
-                  <i class="material-icons right">close</i>
-                </span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-            </div> --}}
-      </div>
-  </div>
+   <div class="container" id = "resultsContainer">
+      {{!-- <div class="card sticky-action large blue-grey darken-1" id="card">
+       <div class="card-image">
+        <img class="carImage" src="images/RoadRunner.png">
+       </div>
+        <div class="card-title">Car Name</div>
+       <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4">Card Title
+         <i class="material-icons right">more_vert</i>
+        </span>
+        <p>
+         <a href="#">This is a link</a>
+        </p>
+       </div>
+       <div class="card-action">
+        <span id="price">Price: $</span>
+       </div>
+       <div class="card-reveal">
+        <span class="card-title grey-text text-darken-4">Card Title
+         <i class="material-icons right">close</i>
+        </span>
+        <p>Here is some more information about this product that is only revealed once clicked on.</p>
+       </div>
+      </div> --}}
+   </div>
+ </div>
 </main>
 {{> footer-block}}

@@ -17,13 +17,10 @@ module.exports = function(app) {
     res.render("signUp", {layout: "signup"})
   })
 
-  app.get("/home", isAuthenticated, function(req, res) {
-    res.render("index", {layout: "main"});
-  });
+  app.get("/login", function(req, res) {
+    res.redirect("login", {layout: "login"})
+  })
 
-  app.get("/signUp", function(req, res) {
-    res.render("signUp");
-  });
   app.get("/payment", function(req, res) {
     res.render("payment");
   });
@@ -33,7 +30,7 @@ module.exports = function(app) {
   });
 
   // Render 404 page for any unmatched routes
-  // app.get("*", function(req, res) {
-  //   res.render("404");
-  // });
+  app.get("*", function(req, res) {
+    res.render("404");
+  });
 };

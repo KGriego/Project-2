@@ -55,6 +55,10 @@ input {
   border-bottom: 1px solid #9e9e9e !important;
 }
 
+.loginFont{
+  color: black !important;
+}
+
 .dateAndLocation {
   background-image: url("../images/snow_mountains_forest_landscape_road-21144.jpg");
   background-position: center;
@@ -102,7 +106,7 @@ input {
 }
 
 .signupcol {
-  background-color: blue;
+  background-color: #eebf47;
   border-radius: 10px;
 }
 

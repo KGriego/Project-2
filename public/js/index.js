@@ -217,6 +217,7 @@ $(document).ready(function() {
                     )
                   );
                   newCard.append($("<i class='fas fa-dollar-sign' style='float:right'>"));
+
                   newCard.append(
                     $("<div class='card-title' id='cost'>").text(
                       "Estimated Price: $" + apiInfo[i].estimated_total.amount
