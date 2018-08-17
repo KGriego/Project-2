@@ -52,7 +52,11 @@ nav {
 }
 
 input {
-  border-bottom: 1px solid black !important;
+  border-bottom: 1px solid #9e9e9e !important;
+}
+
+::placeholder {
+  color: black;
 }
 
 .dateAndLocation {
