@@ -8,18 +8,19 @@
         </h3>
         {{!-- <img class="signupImage" src="images/RoadRunner.png" alt=""> --}}
         <div class="row">
-          <form name="signUp" class="col s12 createUser signUp">
+          <form name="signUp" action="/api/signup" method="GET" class="col s12 createUser signUp">
             <div class="row">
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="email" type="email" class="validate" placeholder="youremail@someservice.com">
+                  <input id="email" name="email" type="email" class="validate" placeholder="youremail@someservice.com">
                 </div>
               </div>
               <div class="input-field col s12">
-                <input id="password" type="password" class="validate" placeholder="Password">
+                <input id="password" name="password" type="password" class="validate" placeholder="Password">
               </div>
             </div>
-            <input type="submit" id="submit" name="signUp">
+            <button class="btn btn-waves" type="submit" id="submit">Sign Up!</button>
+            <a class="btn btn-waves" href="/">Login</a>
           </form>
         </div>
       </div>

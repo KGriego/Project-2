@@ -20,6 +20,8 @@ $(document).ready(function() {
     signUpUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
+
+    alert("Please login in with your details in the login page");
   });
 
   // Does a post to the signup route. If successful, we are redirected to the members page
