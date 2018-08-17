@@ -189,7 +189,7 @@ $(document).ready(function() {
 
                 $.ajax({
                   url:
-                    "http://www.carimagery.com/api.asmx/GetImageUrl?searchTerm=" +
+                    "https://www.carimagery.com/api.asmx/GetImageUrl?searchTerm=" +
                     searchTerm,
                   method: "GET"
                 }).then(function(response1) {
