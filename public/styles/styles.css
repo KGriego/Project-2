@@ -1,18 +1,18 @@
+*{
+  box-sizing: border-box;
+}
 body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
 }
-
 main {
   flex: 1 0 auto;
 }
-
 nav {
   background: grey;
   max-width: 100%;
 }
-
 .logo-text {
   display: inline-block;
   color: #eebf47;
@@ -20,85 +20,64 @@ nav {
   font-family: "Do Hyeon", sans-serif;
   vertical-align: 30%;
 }
-
 #dropdown1 {
   background: grey;
   width: 500px !important;
   top: 99% !important;
 }
-
 .loginTitle {
   position: absolute;
   top: 0;
   left: 15%;
 }
-
 .sidenav {
   background: grey;
 }
-
 .sidenav-trigger {
   position: absolute;
   top: 1.5%;
 }
-
 .sidenav-trigger .material-icons {
   font-size: 36px;
 }
-
 input {
   border-bottom: 1px solid #9e9e9e !important;
 }
-
 .dateAndLocation {
   background-image: url("../images/snow_mountains_forest_landscape_road-21144.jpg");
   background-position: center;
   margin-top: 10px;
 }
-
 .input-field>label {
   color: white;
 }
-
 label.active {
   color: white !important;
 }
-
 .findCar {
   text-align: center;
 }
-
 .carHolder {
   border: 10px solid darkblue;
 }
-
 .carDetails {
   border: 5px solid green;
 }
-
 .carImage {
   height: auto;
   width: 100%;
 }
-
 .card-image {
   height: 100%;
   width: 75%;
 }
-
 .page-footer {
   background: grey;
 }
-
-/* .showresults{
-  display: none;
-} */
-
 .payFont {
   color: maroon !important;
   font-weight: bold;
 }
-
 #paymentCountry {
   float: left;
   margin-top: 30px;
@@ -117,7 +96,6 @@ label.active {
   margin-left: 11px;
   margin-right: 10px;
 }
-
 .payWrapper {
   background-color: #eebf47;
   opacity: .8;
@@ -126,7 +104,6 @@ label.active {
 .validate {
   color: black;
 }
-
 #country {
   margin-top: 20px;
   display: block;
@@ -134,11 +111,38 @@ label.active {
   background-color: grey;
   border: #eebf47;
 }
-
 #zipPosition {
   margin-left: 100px;
 }
-
 #buttonColor {
   background-color: maroon !important;
+}
+
+#card{
+  margin: 10px 5px;
+  height: auto;
+  width: 75%;
+  float: left;
+  padding: 5px 5px;
+  background-color: lightslategray;
+  color: aliceblue;
+  font-family: 'PT Sans', sans-serif;
+  overflow: visible;
+  align-content: center;
+}
+#card img{
+  margin: 5 5px;
+  padding: 5 5px;
+  border: solid;
+  border-color: black;
+}
+#resultsContainer{
+  align-content: left;
+}
+#card-image{
+  width: 400px;
+  height: 200px;
+}
+#entireAddress, #dropoffLocation, #pickupDate, #pickupTime, #dropoffDate, #dropoffTime{
+  color: white;
 }
