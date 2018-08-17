@@ -114,7 +114,6 @@ $(document).ready(function() {
     }
   });
 
-
   $("#findCars").on("click", function() {
     zip = $(".pickupLocation").val();
     console.log(zip);
