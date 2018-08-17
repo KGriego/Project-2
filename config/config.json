@@ -1,21 +1,26 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "passport_demo",
-    "host": "localhost",
+    "username": "p951va26zku4q1hm",
+    "password": "vav0nkfmeqrsryzr",
+    "database": "dc1qxydzth9308tu",
+    "host": "muowdopceqgxjn2b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
-    "username": "root",
-    "password": null,
-    "database": "testdb",
-    "host": "localhost",
-    "dialect": "mysql",
-    "logging": false
+    "username": "p951va26zku4q1hm",
+    "password": "vav0nkfmeqrsryzr",
+    "database": "dc1qxydzth9308tu",
+    "host": "muowdopceqgxjn2b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "port": 3306,
+    "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "p951va26zku4q1hm",
+    "password": "vav0nkfmeqrsryzr",
+    "database": "dc1qxydzth9308tu",
+    "host": "muowdopceqgxjn2b.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "port": 3306,
     "dialect": "mysql"
   }
 }
