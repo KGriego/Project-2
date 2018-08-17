@@ -13,6 +13,14 @@ var lat;
 var lng;
 
 $(document).ready(function() {
+
+  $.ajax({
+    url: "api/user_data",
+    method: "GET"
+  }).then(function(response) {
+    $(".userEmail").text(response.email);
+  });
+
   $(".pickupLocation").change(function() {
     zip = $(".pickupLocation").val();
     console.log(zip);
