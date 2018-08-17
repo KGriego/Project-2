@@ -12,7 +12,10 @@ $(document).ready(function() {
       password: passwordInput.val().trim()
     };
 
+    console.log("I'm being submitted")
+
     if (!userData.email || !userData.password) {
+      console.log("One of me doesn't exist")
       return;
     }
 
@@ -20,6 +23,7 @@ $(document).ready(function() {
     loginUser(userData.email, userData.password);
     emailInput.val("");
     passwordInput.val("");
+    
   });
 
   // loginUser does a post to our "api/login" route and if successful, redirects us the the members page
