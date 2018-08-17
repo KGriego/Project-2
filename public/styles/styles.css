@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   min-height: 100vh;
@@ -141,4 +145,37 @@ label.active {
 
 #buttonColor {
   background-color: maroon !important;
+}
+
+#card{
+  margin: 10px 5px;
+  height: auto;
+  width: 75%;
+  float: left;
+  padding: 5px 5px;
+  background-color: lightslategray;
+  color: aliceblue;
+  font-family: 'PT Sans', sans-serif;
+  overflow: visible;
+  align-content: center;
+}
+
+#card img{
+  margin: 5 5px;
+  padding: 5 5px;
+  border: solid;
+  border-color: black;
+}
+
+#resultsContainer{
+  align-content: left;
+}
+
+#card-image{
+  width: 400px;
+  height: 200px;
+}
+
+#entireAddress, #dropoffLocation, #pickupDate, #pickupTime, #dropoffDate, #dropoffTime{
+  color: white;
 }

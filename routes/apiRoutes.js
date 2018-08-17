@@ -5,12 +5,36 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
+  app.get("/api/cars", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.cars.findAll({}).then(function(carDetails) {
+      res.json(carDetails);
+    });
+  });
+
+  app.get("/api/cars/:acriss_code", function(req, res) {
+    // Here we add an "include" property to our options in our findAll query
+    // We set the value to an array of the models we want to include in a left outer join
+    // In this case, just db.Post
+    db.cars
+      .findAll({
+        where: {
+          acriss_code: req.params.acriss_code
+        }
+      })
+      .then(function(carDetails) {
+        res.json(carDetails);
+      });
+  });
+
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
     // So we're sending the user back the route to the members page because the redirect will happen on the front end
     // They won't get this or even be able to access this page if they aren't authed
     console.log(req.user);
-    res.redirect("/index")
+    res.redirect("/index");
     // res.redirect(307, "/index");
   });
 
