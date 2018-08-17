@@ -56,7 +56,7 @@ input {
 }
 
 .loginFont{
-  color: black;
+  color: black !important;
 }
 
 .dateAndLocation {
