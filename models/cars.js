@@ -1,5 +1,3 @@
-anuhya [2:22 PM]
-cars.js 
 module.exports = function(sequelize, DataTypes) {
 var cars = sequelize.define("cars", {
  id: {
@@ -32,7 +30,6 @@ var cars = sequelize.define("cars", {
   type: DataTypes.STRING,
   allowNull: false
  }
-​
 });
  return cars;
 };

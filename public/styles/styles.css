@@ -74,9 +74,6 @@ label.active {
 .page-footer {
   background: grey;
 }
-/* .showresults{
-  display: none;
-} */
 .payFont {
   color: maroon !important;
   font-weight: bold;
@@ -120,6 +117,7 @@ label.active {
 #buttonColor {
   background-color: maroon !important;
 }
+
 #card{
   margin: 10px 5px;
   height: auto;
